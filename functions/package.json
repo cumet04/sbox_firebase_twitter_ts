@@ -1,0 +1,36 @@
+{
+  "name": "functions",
+  "private": true,
+  "version": "1.0.0",
+  "repository": "ssh://git@github.com/medalhkr/sbox_twitter_ts",
+  "author": "medalhkr <medalhkr@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "8"
+  },
+  "scripts": {
+    "build": "tsc",
+    "serve": "yarn run build && node lib/express_entry.js",
+    "shell": "yarn run build && firebase functions:shell",
+    "start": "yarn run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/firebase_entry.js",
+  "dependencies": {
+    "twitter": "^1.7.1",
+    "express": "^4.16.4",
+    "firebase-admin": "~7.0.0",
+    "firebase-functions": "^2.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.3",
+    "@types/express": "^4.16.1",
+    "typescript": "^3.2.2"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "endOfLine": "lf",
+    "semi": false
+  }
+}
