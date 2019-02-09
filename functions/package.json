@@ -10,22 +10,21 @@
   },
   "scripts": {
     "build": "tsc",
-    "serve": "yarn run build && node lib/express_entry.js",
-    "shell": "yarn run build && firebase functions:shell",
     "start": "yarn run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
-  "main": "lib/firebase_entry.js",
+  "main": "lib/main.js",
   "dependencies": {
-    "twitter": "^1.7.1",
     "express": "^4.16.4",
     "firebase-admin": "~7.0.0",
-    "firebase-functions": "^2.2.0"
+    "firebase-functions": "^2.2.0",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
-    "prettier": "^1.16.3",
+    "@google-cloud/functions-emulator": "^1.0.0-beta.5",
     "@types/express": "^4.16.1",
+    "prettier": "^1.16.3",
     "typescript": "^3.2.2"
   },
   "prettier": {

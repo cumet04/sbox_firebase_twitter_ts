@@ -1,4 +1,5 @@
 import * as express from "express"
+import * as functions from "firebase-functions"
 import * as fs from "fs"
 
 const use_twitter = false
@@ -44,4 +45,4 @@ app.get("/timeline", (req, res) => {
   })
 })
 
-export default app
+export const api = functions.https.onRequest(app)
